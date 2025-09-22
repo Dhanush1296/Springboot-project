@@ -34,8 +34,8 @@ pipeline {
             steps {
                 dir("${env.WORKSPACE}"){
                     sh '''
-                    kubectl apply -f k8s/db-deployment.yaml
-                    kubectl apply -f k8s/app-deployment.yaml
+                    kubectl apply -f Springboot-Project/k8s/db-deployment.yaml
+                    kubectl apply -f Springboot-Project/k8s/app-deployment.yaml
                     '''
                 }
             }
