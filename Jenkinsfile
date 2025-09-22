@@ -30,6 +30,13 @@ pipeline {
             }
         }
 
+        stage('Print Workspace') {
+            steps {
+                echo "Workspace path is: ${env.WORKSPACE}"
+                    sh 'ls -l $WORKSPACE'
+                }
+            }
+
         stage('Deploy to Kubernetes') {
             steps {
                 dir("${env.WORKSPACE}"){
