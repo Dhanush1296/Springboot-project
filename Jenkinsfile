@@ -32,10 +32,12 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh '''
+                dir("${env.WORKSPACE}"){
+                    sh '''
                     kubectl apply -f k8s/db-deployment.yaml
                     kubectl apply -f k8s/app-deployment.yaml
-                '''
+                    '''
+                }
             }
         }
     }
