@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'your-dockerhub-username/spring-petclinic'
+        IMAGE_NAME = 'dhanush46656/spring-petclinic'
         K8S_NAMESPACE = 'default'
     }
 
     stages {
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-username/spring-petclinic.git'
+                git 'https://github.com/Dhanush1296/spring-petclinic.git'
             }
         }
 
