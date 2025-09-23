@@ -37,10 +37,11 @@ pipeline {
                 }
             }
 
-        stage('Deploy to Kubernetes') {
+        stage('Deploy to Minikube') {
             steps {
                 dir("${env.WORKSPACE}"){
                     sh '''
+                    kubectl config use-context minikube
                     kubectl apply -f k8s/db.yml
                     kubectl apply -f k8s/petclinic.yml
                     '''
