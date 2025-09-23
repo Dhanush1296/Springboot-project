@@ -42,8 +42,8 @@ pipeline {
                 dir("${env.WORKSPACE}"){
                     sh '''
                     kubectl config use-context minikube
-                    kubectl apply -f k8s/db.yml
-                    kubectl apply -f k8s/petclinic.yml
+                    kubectl apply -f k8s/db.yml --validate=false
+                    kubectl apply -f k8s/petclinic.yml --validate=false
                     '''
                 }
             }
